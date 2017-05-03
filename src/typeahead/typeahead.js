@@ -294,7 +294,7 @@ angular.module('mgcrea.ngStrap.typeahead', ['mgcrea.ngStrap.tooltip', 'mgcrea.ng
             .then(function (values) {
               // Prevent input with no future prospect if selectMode is truthy
               // @TODO test selectMode
-              if (options.selectMode && !values.length && newValue.length > 0) {
+              if (options && options.selectMode && !values.length && newValue.length > 0) {
                 controller.$setViewValue(controller.$viewValue.substring(0, controller.$viewValue.length - 1));
                 return;
               }
