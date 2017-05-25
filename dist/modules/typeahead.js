@@ -210,7 +210,7 @@ angular.module('mgcrea.ngStrap.typeahead', [ 'mgcrea.ngStrap.tooltip', 'mgcrea.n
       scope.$watch(attr.ngModel, function(newValue, oldValue) {
         scope.$modelValue = newValue;
         parsedOptions.valuesFn(scope, controller).then(function(values) {
-          if (options.selectMode && !values.length && newValue.length > 0) {
+          if (options && options.selectMode && !values.length && newValue.length > 0) {
             controller.$setViewValue(controller.$viewValue.substring(0, controller.$viewValue.length - 1));
             return;
           }
